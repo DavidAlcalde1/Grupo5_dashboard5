@@ -17,32 +17,48 @@ export default function UsersDashboard() {
   }, []);
 
   return (
-    <div>
-       <div className="panels-container">
-      <div className="panel">
-        <h2>Listado de Usuarios</h2>
-        <h3>Total de Usuarios: {users.length}</h3>
+    <div className='background'>
+      <div>
+        <img
+          className="logo"
+          src="/images/logo-trend-boutique.svg"
+          alt="Logo Trend Boutique"
+          style={{ width: '150px', height: '100px' }}
+        />
       </div>
-
-      <div className="panel">
-        <h2>Listado de Productos</h2>
-        <h3>Total de Productos: {users.length}</h3>
-      </div>
-
-      <div className="panel">
-        <h2>Listado de Categorías</h2>
-        <h3>Total de Categorías: {users.length}</h3>
-      </div>
-    </div>
-
-      {ultimo && (
-        <div className='last-user'>
-          <h3>Detalle del Último Usuario Creado</h3>
-          <p>ID: {ultimo.idusers}</p>
-          <p>Nombre: {ultimo.first_name}</p>
-          <p>Correo: {ultimo.email}</p>
+      <div className="panels-container">
+        <div className="panel">
+          <h2>Listado de Usuarios</h2>
+          <h3>Total de Usuarios: {users.length}</h3>
         </div>
-      )}
+
+        <div className="panel">
+          <h2>Listado de Productos</h2>
+          <h3>Total de Productos: {users.length}</h3>
+        </div>
+
+        <div className="panel">
+          <h2>Listado de Categorías</h2>
+          <h3>Total de Categorías: {users.length}</h3>
+        </div>
+      </div>
+
+      <div className='last-user'>
+        <h3>Detalle del Último Usuario Creado</h3>
+        <div className='user-details'>
+          <div className='user-text'>
+            <p>ID: {ultimo.idusers}</p>
+            <p>Nombre: {ultimo.first_name}</p>
+            <p>Correo: {ultimo.email}</p>
+            <p>Género: {ultimo.gender}</p>
+          </div>
+          <div className='user-image'>
+            <img src={ultimo.image} alt={ultimo.first_name} />
+          </div>
+        </div>
+      </div>
+
+
 
       <h3>Usuarios</h3>
       <ol>

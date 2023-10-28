@@ -1,17 +1,27 @@
-/* Users.css */
-
-/* Estilos para el encabezado "Listado de Usuarios" */
 h2 {
   font-size: 24px;
-  color: #333;
+  color: #ec4767;
 }
 
-/* Estilos para los paneles con totales */
+h3{
+  color: #302f2f;
+}
+
+.background{
+  margin: 40px;
+}
+
+.logo{
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: -10px;
+}
+
+/* Paneles con totales */
 .panels-container {
-  margin: 10px;
   display: flex;
   justify-content: space-between;
-  flex-direction: row; /* Agrega esta línea para cambiar a horizontal */
+  flex-direction: row;
 }
 
 .panel {
@@ -26,12 +36,27 @@ h2 {
 .last-user {
   background-color: #f9f9f9;
   padding: 20px;
-  margin: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
-/* Estilos para el panel de "Detalle del Último Usuario Creado" */
+.user-details {
+  display: flex;
+  align-items: center;
+}
+
+.user-text {
+  flex: 1;
+}
+
+.user-image {
+  margin-left: 20px;
+  max-width: 100px;
+}
+
 .detail-panel {
   background-color: #f9f9f9;
   padding: 20px;
@@ -39,8 +64,6 @@ h2 {
   border-radius: 5px;
 }
 
-
-/* Estilos para la lista de usuarios */
 ul {
   list-style-type: none;
   padding: 0;
