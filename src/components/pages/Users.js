@@ -4,6 +4,8 @@ import '../../../src/Users.css';
 export default function UsersDashboard() {
   const [users, setUsers] = useState([]);
   const [ultimo, setUltimo] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/api/users')
@@ -14,6 +16,24 @@ export default function UsersDashboard() {
         console.log(data.data[data.data.length - 1].idusers);
       })
       .catch((error) => console.error('Error al obtener usuarios:', error));
+  }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/products')
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data.data)
+      })
+      .catch((error) => console.error('Error al obtener producto:', error));
+  }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/category')
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data.data)
+      })
+      .catch((error) => console.error('Error al obtener categoría:', error));
   }, []);
 
   return (
@@ -34,7 +54,7 @@ export default function UsersDashboard() {
 
         <div className="panel">
           <h2>Listado de Productos</h2>
-          <h3>Total de Productos: {users.length}</h3>
+          <h3>Total de Productos: {products.length}</h3>
         </div>
 
         <div className="panel">
@@ -53,17 +73,17 @@ export default function UsersDashboard() {
             <p>Género: {ultimo.gender}</p>
           </div>
           <div className='user-image'>
-            <img src={ultimo.image} alt={ultimo.first_name} />
+            <img src={'/images/users/' + ultimo.image} alt={ultimo.image} />
           </div>
         </div>
       </div>
 
 
 
-      <h3>Usuarios</h3>
+      <h3>Productos</h3>
       <ol>
-        {users.map((user) => (
-          <li key={user.idusers}>{user.first_name}</li>
+        {products.map((products) => (
+          <li key={products.id}>{products.name}</li>
         ))}
       </ol>
     </div>
