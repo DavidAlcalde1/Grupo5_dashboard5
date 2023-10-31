@@ -6,6 +6,7 @@ export default function UsersDashboard() {
   const [ultimo, setUltimo] = useState([]);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
+  const urlBase = 'http://localhost:3000'
 
   useEffect(() => {
     fetch('http://localhost:3000/api/users')
@@ -73,7 +74,7 @@ export default function UsersDashboard() {
             <p>Género: {ultimo.gender}</p>
           </div>
           <div className='user-image'>
-            <img src={'/images/users/' + ultimo.image} alt={ultimo.image} />
+            <img width='200px' src={urlBase + '/images/users/' + ultimo.image} alt={ultimo.image} />
           </div>
         </div>
       </div>
