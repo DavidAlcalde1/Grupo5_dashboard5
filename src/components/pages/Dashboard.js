@@ -5,7 +5,7 @@ export default function UsersDashboard() {
   const [users, setUsers] = useState([]);
   const [ultimo, setUltimo] = useState([]);
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState([]);
+  const [idcategory, setCategory] = useState([]);
   const urlBase = 'http://localhost:3000'
 
   useEffect(() => {
@@ -29,12 +29,20 @@ export default function UsersDashboard() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/category')
+    fetch('http://localhost:3000/api/products')
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data.data)
+        setProducts(data.data);
+        
+        // Contar la cantidad de registros por categoría
+        const categoryCounts = {};
+        data.data.forEach((product) => {
+          const categoryId = product.idcategory;
+          categoryCounts[categoryId] = (categoryCounts[categoryId] || 0) + 1;
+        });
+        setCategory(categoryCounts);
       })
-      .catch((error) => console.error('Error al obtener categoría:', error));
+      .catch((error) => console.error('Error al obtener producto:', error));
   }, []);
 
   return (
@@ -60,7 +68,16 @@ export default function UsersDashboard() {
 
         <div className="panel">
           <h2>Listado de Categorías</h2>
-          <h3>Total de Categorías: {users.length}</h3>
+          <h3>Total de Categorías: {Object.keys(idcategory).length}</h3>
+          <div className='user-details'>
+            <div className='user-text'>
+            {Object.keys(idcategory).map((categoryId) => (
+              <p key={categoryId}> {categoryId == 1 ? "SPORT": categoryId == 2 ? "FORMAL": categoryId == 3 ? "CASSUAL" :categoryId}: {idcategory[categoryId]}</p>
+            ))}
+             
+            </div>
+          </div>
+
         </div>
       </div>
 
