@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import '../../../src/Dashboard.css';
 
-import '../../../src/Users.css';
 export default function UsersDashboard() {
   const [users, setUsers] = useState([]);
   const [ultimo, setUltimo] = useState([]);
   const [products, setProducts] = useState([]);
   const [idcategory, setCategory] = useState([]);
-  const urlBase = 'http://localhost:3000'
+  const urlBase = 'http://localhost:3000';
 
   useEffect(() => {
     fetch('http://localhost:3000/api/users')
       .then((response) => response.json())
       .then((data) => {
-        setUsers(data.data)
-        setUltimo(data.data[data.data.length - 1])
+        setUsers(data.data);
+        setUltimo(data.data[data.data.length - 1]);
         console.log(data.data[data.data.length - 1].idusers);
       })
       .catch((error) => console.error('Error al obtener usuarios:', error));
@@ -23,7 +23,7 @@ export default function UsersDashboard() {
     fetch('http://localhost:3000/api/products')
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data.data)
+        setProducts(data.data);
       })
       .catch((error) => console.error('Error al obtener producto:', error));
   }, []);
@@ -33,7 +33,7 @@ export default function UsersDashboard() {
       .then((response) => response.json())
       .then((data) => {
         setProducts(data.data);
-        
+
         // Contar la cantidad de registros por categoría
         const categoryCounts = {};
         data.data.forEach((product) => {
@@ -70,19 +70,26 @@ export default function UsersDashboard() {
           <h2>Listado de Categorías</h2>
           <h3>Total de Categorías: {Object.keys(idcategory).length}</h3>
           <div className='user-details'>
-            <div className='user-text'>
             {Object.keys(idcategory).map((categoryId) => (
-              <p key={categoryId}> {categoryId == 1 ? "SPORT": categoryId == 2 ? "FORMAL": categoryId == 3 ? "CASSUAL" :categoryId}: {idcategory[categoryId]}</p>
+              <div className='categories' key={categoryId}>
+                <p>
+                  {categoryId == 1
+                    ? 'SPORT'
+                    : categoryId == 2
+                      ? 'FORMAL'
+                      : categoryId == 3
+                        ? 'CASUAL'
+                        : 'Categoría Desconocida'}:{' '}
+                  {idcategory[categoryId]}
+                </p>
+              </div>
             ))}
-             
-            </div>
           </div>
-
         </div>
       </div>
 
       <div className='last-user'>
-        <h3>Detalle del Último Usuario Creado</h3>
+        <h2>Detalle del Último Usuario Creado</h2>
         <div className='user-details'>
           <div className='user-text'>
             <p>ID: {ultimo.idusers}</p>
@@ -96,14 +103,14 @@ export default function UsersDashboard() {
         </div>
       </div>
 
-
-
-      <h3>Productos</h3>
-      <ol>
-        {products.map((products) => (
-          <li key={products.id}>{products.name}</li>
-        ))}
-      </ol>
-    </div>
-  );
+      <div className="panel-products"> 
+        <h2>Productos</h2>
+        <ul>
+          {products.map((product) => (
+            <li className='specific-products' key={product.id}>{product.name}</li>
+          ))}
+        </ul>
+      </div>
+      </div>
+      );
 }

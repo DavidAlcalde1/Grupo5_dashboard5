@@ -1,0 +1,115 @@
+h2 {
+  font-size: 24px;
+  color: #ec4767;
+}
+
+h3{
+  color: #302f2f;
+}
+
+.background{
+  margin: 40px;
+}
+
+.logo{
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: -10px;
+}
+
+/* Paneles con totales */
+.panels-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.panel {
+  margin-bottom: 5px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 29%;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.08);
+}
+
+.panel-products {
+  background-color: #f9f9f9;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight:630;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.08);
+}
+
+.specific-products {
+  background-color: #ec4767;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bolder;
+  color: #ffffff;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.08);
+}
+
+.last-user {
+  background-color: #f9f9f9;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+.user-details {
+  display: flex;
+  align-items: center;
+}
+
+.user-text {
+  flex: 1;
+  font-weight:630;
+}
+
+.user-image {
+  max-width: 100px;
+  margin-right: 100px;
+  padding-bottom: 5px;
+}
+
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+  background-color: #ec4767;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bolder;
+  color: #ffffff;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-weight:500;
+}
+
+li {
+  margin: 5px 0;
+  font-size: 16px;
+}
