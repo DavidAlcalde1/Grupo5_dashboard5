@@ -20,26 +20,31 @@ h3{
 /* Paneles con totales */
 .panels-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-bottom: 5px;
   background-color: #f0f0f0;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  width: 29%;
+  width: 30%;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
-  margin-right: 20px;
+  
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .panel {
     width: 48%;
   }
-}
+} */
 
 .panel-products {
   background-color: #f9f9f9;
@@ -78,19 +83,19 @@ h3{
 }
 
 
-.user-details {
+.contentCategories {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .user-text {
-  flex: 1;
+  /* flex: 1; */
   font-weight:630;
 }
 
 .user-image {
   max-width: 100px;
-  margin-right: 100px;
   padding-bottom: 5px;
 }
 
@@ -98,25 +103,94 @@ h3{
 .categories {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-right: 20px;
+  align-items:flex-start;
   background-color: #ec4767;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 10px;
   border-radius: 5px;
   font-size: 12px;
   font-weight: bolder;
   color: #ffffff;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  min-width: 30%;
+  margin-bottom: 5px;
 }
 
-ul {
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items:center;
+  flex-direction: row;
+}
+/* ul {
   list-style-type: none;
   padding: 0;
   font-weight:500;
+} */
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 1rem;
+  padding:1rem;
+
 }
 
 li {
   margin: 5px 0;
   font-size: 16px;
 }
+
+img{
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+/* Estilos para pantallas grandes (escritorio) */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilos para pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Estilos para pantallas pequeñas (teléfonos móviles) */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+  .box {
+    margin-bottom: 20px;
+  }
+}
+
+/* Estilos para pantallas pequeñas (Samsung Galaxy S8) */
+@media (max-width: 360px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  .box {
+    margin-bottom: 10px;
+    font-size: 14px; /* Ajusta el tamaño de fuente para verse mejor en pantallas pequeñas */
+  }
+}
+
+
