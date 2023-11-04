@@ -143,3 +143,48 @@ li {
   margin: 5px 0;
   font-size: 16px;
 }
+
+@media (max-width: 768px) {
+  .user-details {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .panels-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .panel{
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  .user-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .user-image{
+    margin: auto;
+    max-width: none;
+  }
+  
+  .user-text{
+    font-size: 3vw;
+    overflow: auto;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+}
