@@ -20,26 +20,31 @@ h3{
 /* Paneles con totales */
 .panels-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-bottom: 5px;
   background-color: #f0f0f0;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  width: 29%;
+  width: 30%;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
-  margin-right: 20px;
+  
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .panel {
     width: 48%;
   }
-}
+} */
 
 .panel-products {
   background-color: #f9f9f9;
@@ -78,19 +83,19 @@ h3{
 }
 
 
-.user-details {
+.contentCategories {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .user-text {
-  flex: 1;
+  /* flex: 1; */
   font-weight:630;
 }
 
 .user-image {
   max-width: 100px;
-  margin-right: 100px;
   padding-bottom: 5px;
 }
 
@@ -98,70 +103,43 @@ h3{
 .categories {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-right: 20px;
+  align-items:flex-start;
   background-color: #ec4767;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 10px;
   border-radius: 5px;
   font-size: 12px;
   font-weight: bolder;
   color: #ffffff;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  min-width: 30%;
+  margin-bottom: 5px;
 }
 
-ul {
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items:center;
+  flex-direction: row;
+}
+/* ul {
   list-style-type: none;
   padding: 0;
   font-weight:500;
+} */
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 1rem;
+  padding:1rem;
+
 }
 
 li {
   margin: 5px 0;
   font-size: 16px;
-}
-
-@media (max-width: 768px) {
-  .user-details {
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .panels-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .panel{
-    width: 100%;
-    margin: 0;
-    margin-bottom: 5px;
-  }
-
-  .user-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  .user-image{
-    margin: auto;
-    max-width: none;
-  }
-  
-  .user-text{
-    font-size: 3vw;
-    overflow: auto;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    flex-wrap: wrap;
-  }
 }
