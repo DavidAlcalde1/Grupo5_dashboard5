@@ -165,12 +165,3 @@ li {
     flex-wrap: wrap;
   }
 }
-
-@media (max-width: 1280px) {
-  .user-details {
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    gap: 5px;
-  }
-}
