@@ -66,9 +66,9 @@ export default function UsersDashboard() {
                   {categoryId == 1
                     ? 'SPORT '
                     : categoryId == 2
-                      ? 'FORMAL'
+                      ? 'CASUAL'
                       : categoryId == 3
-                        ? 'CASUAL'
+                        ? 'FORMAL'
                         : 'Categoría Desconocida'}:{' '}
                   {idcategory[categoryId]}
                 </p>
