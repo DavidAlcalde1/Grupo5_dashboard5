@@ -98,6 +98,7 @@ h3{
 .user-details {
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 
 .user-text .user-image{
