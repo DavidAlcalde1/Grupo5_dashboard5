@@ -21,7 +21,7 @@ export default function UsersDashboard() {
 
 
   useEffect(() => {
-    fetch(urlBase+'/api/products')
+    fetch(urlBase + '/api/products')
       .then((response) => response.json())
       .then((data) => {
         setProducts(data.data)
@@ -62,9 +62,9 @@ export default function UsersDashboard() {
           <div className='contentCategories'>
             {Object.keys(idcategory).map((categoryId) => (
               <div className='categories' key={categoryId}>
-                <p>
+                <p className='pcategorie'>
                   {categoryId == 1
-                    ? 'SPORT'
+                    ? 'SPORT '
                     : categoryId == 2
                       ? 'FORMAL'
                       : categoryId == 3
@@ -79,21 +79,25 @@ export default function UsersDashboard() {
       </div>
 
       <div className='last-user'>
-        <h2>Detalle del Último Usuario Creado</h2>
-        <div className='user-details'>
-          <div className='user-text'>
-            <p>ID: {ultimo.idusers}</p>
-            <p>Nombre: {ultimo.first_name}</p>
-            <p>Correo: {ultimo.email}</p>
-            <p>Género: {ultimo.gender}</p>
-          </div>
-          <div className='user-image'>
-            <img width='200px' src={urlBase + '/images/users/' + ultimo.image} alt={ultimo.image} />
+        <div className='titulo-user'>
+          <h2>Detalle del Último Usuario Creado</h2>
+        </div>
+        <div className='user-info'>
+          <div className='user-details'>
+            <div className='user-text'>
+              <p>Nombre: {ultimo.first_name}</p>
+              <p>Correo: {ultimo.email}</p>
+              <p>Género: {ultimo.gender}</p>
+              <p>Teléfono: {ultimo.telefono}</p>
+            </div>
+            <div className='user-image'>
+              <img width='200px' src={urlBase + '/images/users/' + ultimo.image} alt={ultimo.image} />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="panel-products"> 
+      <div className="panel-products">
         <h2>Productos</h2>
         <ul>
           {products.map((product) => (
@@ -101,6 +105,6 @@ export default function UsersDashboard() {
           ))}
         </ul>
       </div>
-      </div>
-      );
+    </div>
+  );
 }
