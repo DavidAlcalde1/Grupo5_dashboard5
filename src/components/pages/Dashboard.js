@@ -47,17 +47,17 @@ export default function UsersDashboard() {
       </div>
       <div className="panels-container">
         <div className="panel">
-          <h2>Listado de Usuarios</h2>
+          <h2> Usuarios</h2>
           <h3>Total de Usuarios: {users.length}</h3>
         </div>
 
         <div className="panel">
-          <h2>Listado de Productos</h2>
+          <h2> Productos</h2>
           <h3>Total de Productos: {products.length}</h3>
         </div>
 
         <div className="panel">
-          <h2>Listado de Categorías</h2>
+          <h2> Categorías</h2>
           <h3>Total de Categorías: {Object.keys(idcategory).length}</h3>
           <div className='contentCategories'>
             {Object.keys(idcategory).map((categoryId) => (
